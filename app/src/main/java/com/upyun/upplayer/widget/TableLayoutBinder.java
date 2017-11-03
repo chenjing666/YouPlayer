@@ -32,7 +32,7 @@
 //    public TableLayout mTableLayout;
 //
 //    public TableLayoutBinder(Context context) {
-//        this(context, R.layout.table_media_info);
+//        this(context, R.layout.mo_youplayer_table_media_info);
 //    }
 //
 //    public TableLayoutBinder(Context context, int layoutResourceId) {
@@ -48,7 +48,7 @@
 //    }
 //
 //    public View appendRow1(String name, String value) {
-//        return appendRow(R.layout.table_media_info_row1, name, value);
+//        return appendRow(R.layout.mo_youplayer_table_media_info_row1, name, value);
 //    }
 //
 //    public View appendRow1(int nameId, String value) {
@@ -56,7 +56,7 @@
 //    }
 //
 //    public View appendRow2(String name, String value) {
-//        return appendRow(R.layout.table_media_info_row2, name, value);
+//        return appendRow(R.layout.mo_youplayer_table_media_info_row2, name, value);
 //    }
 //
 //    public View appendRow2(int nameId, String value) {

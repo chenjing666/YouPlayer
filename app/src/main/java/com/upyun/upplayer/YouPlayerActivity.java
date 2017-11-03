@@ -41,17 +41,12 @@ public class YouPlayerActivity extends Activity {
 //    String path = "rtmp://testlivesdk.b0.upaiyun.com/live/test131";
 
     //    String path_yin = "http://save.jiashizhan.com:8081/video/20171027/130023675_020714/3675_20171027020714231_av.mp4";
-    String path_yin = "http://save.jiashizhan.com:8081/video/20171027/130023675_020714/3160_20171027020714527_av.mp4";
+//    String path_yin = "http://save.jiashizhan.com:8081/video/20171027/130023675_020714/3160_20171027020714527_av.mp4";
 
     private static final String TAG = YouPlayerActivity.class.getSimpleName();
     RelativeLayout.LayoutParams mVideoParams;
 
     UpVideoView upVideoView;
-    //    private TableLayout mHudView;
-//    private TextView mPlayInfo;
-    private String streamkey;
-    private String roomID;
-    private String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,43 +61,25 @@ public class YouPlayerActivity extends Activity {
         }
         // --- 获取连接房间参数
         Intent intent = getIntent();
-        String msg = intent.getStringExtra("appParam");
-        try {
-            JSONObject object = new JSONObject(msg);
-            streamkey = object.getString("streamkey");
-            roomID = object.getString("roomID");
-            userID = object.getString("userID");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-//        path = "rtmp://play.jiashizhan.com/live/streamkey=" + streamkey + "&roomid=" + roomID + "&dataid=" + userID + "&isApp=1";
-
+        path = intent.getStringExtra("appParam");
+//        try {
+//            JSONObject object = new JSONObject(msg);
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-//        mPathEt = (EditText) findViewById(R.id.editText);
-//        mHudView = (TableLayout) findViewById(R.id.hud_view);
-//        mPlayInfo = (TextView) findViewById(R.id.tv_info);
-//        mPlayInfo.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (mHudView.getVisibility() == View.VISIBLE) {
-//                    mHudView.setVisibility(View.GONE);
-//                } else {
-//                    mHudView.setVisibility(View.VISIBLE);
-//                }
-//            }
-//        });
         int uvv_vidoId = UZResourcesIDFinder.getResIdID("uvv_vido");
         upVideoView = (UpVideoView) findViewById(uvv_vidoId);
 //        upVideoView.setHudView(mHudView);
 
         //设置背景图片
-        upVideoView.setImage(R.drawable.dog);
+//        upVideoView.setImage(R.drawable.dog);
 
         //设置播放地址
-        upVideoView.setVideoPath(path_yin);
-        upVideoView.setMediaController(new MediaController(this,true));
+        upVideoView.setVideoPath(path);
+//        upVideoView.setMediaController(new MediaController(this, true));
 
         //开始播放
         upVideoView.start();
@@ -123,40 +100,40 @@ public class YouPlayerActivity extends Activity {
         upVideoView.pause();
     }
 
-    public void toggle(View view) {
+//    public void toggle(View view) {
+//
+//        if (upVideoView.isPlaying()) {
+//            //暂停播放
+//            upVideoView.pause();
+//        } else {
+//            //开始播放
+//            upVideoView.start();
+//        }
+//    }
 
-        if (upVideoView.isPlaying()) {
-            //暂停播放
-            upVideoView.pause();
-        } else {
-            //开始播放
-            upVideoView.start();
-        }
-    }
+//    public void refresh(View view) {
+//        upVideoView.setVideoPath(path);
+//        upVideoView.start();
+//    }
 
-    public void refresh(View view) {
-        upVideoView.setVideoPath(path);
-        upVideoView.start();
-    }
+//    //全屏播放
+//    public void fullScreen(View view) {
+//        upVideoView.fullScreen(this);
+//    }
 
-    //全屏播放
-    public void fullScreen(View view) {
-        upVideoView.fullScreen(this);
-    }
-
-    private void fullScreen() {
-        if (getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        }
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(metrics.widthPixels, metrics.heightPixels);
-        mVideoParams = (RelativeLayout.LayoutParams) upVideoView.getLayoutParams();
-        upVideoView.setLayoutParams(params);
-        upVideoView.getTrackInfo();
-    }
+//    private void fullScreen() {
+//        if (getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
+//            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+//        }
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        DisplayMetrics metrics = new DisplayMetrics();
+//        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+//        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(metrics.widthPixels, metrics.heightPixels);
+//        mVideoParams = (RelativeLayout.LayoutParams) upVideoView.getLayoutParams();
+//        upVideoView.setLayoutParams(params);
+//        upVideoView.getTrackInfo();
+//    }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -168,11 +145,11 @@ public class YouPlayerActivity extends Activity {
     @Override
     public void onBackPressed() {
 
-        if (upVideoView.isFullState()) {
-            //退出全屏
-            upVideoView.exitFullScreen(this);
-            return;
-        }
+//        if (upVideoView.isFullState()) {
+//            //退出全屏
+//            upVideoView.exitFullScreen(this);
+//            return;
+//        }
         super.onBackPressed();
     }
 

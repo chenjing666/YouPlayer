@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">YouPlayer</string>
 
-    <string name="vdec">vdec</string>
-    <string name="fps">fps</string>
-    <string name="v_cache">v-cache</string>
-    <string name="a_cache">a-cache</string>
-    <string name="load_cost">load-cost</string>
-    <string name="seek_cost">seek_cost</string>
-    <string name="seek_load_cost">seek_load_cost</string>
-    <string name="tcp_speed">tcp_speed</string>
-    <string name="bit_rate">bit_rate</string>
+    <string name="mo_youplayer_vdec">vdec</string>
+    <string name="mo_youplayer_fps">fps</string>
+    <string name="mo_youplayer_v_cache">v-cache</string>
+    <string name="mo_youplayer_a_cache">a-cache</string>
+    <string name="mo_youplayer_load_cost">load-cost</string>
+    <string name="mo_youplayer_seek_cost">seek_cost</string>
+    <string name="mo_youplayer_seek_load_cost">seek_load_cost</string>
+    <string name="mo_youplayer_tcp_speed">tcp_speed</string>
+    <string name="mo_youplayer_bit_rate">bit_rate</string>
 
     <string name="ijkplayer_dummy"></string>
 </resources>
