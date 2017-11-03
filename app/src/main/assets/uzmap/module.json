@@ -1,0 +1,8 @@
+{
+	modules:[
+		{
+		    name:'YouPlayer',
+		    class:'com.upyun.upplayer.YouPlayer'
+		}
+	]
+}
