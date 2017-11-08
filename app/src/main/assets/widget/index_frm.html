@@ -22,8 +22,26 @@
 
 	function startPush(){
 	        var uz=api.require('YouPlayer');
-	        var param = {appParam:"http://save.jiashizhan.com:8081/video/20171027/130023675_020714/3675_20171027020714231_av.mp4"};
-	        uz.startYouPlayer(param);
+	        uz.startYouPlayer(
+	        {
+								   rect:
+									   {
+
+									    x: 0, //左上角x坐标
+										y: 0, //左上角y坐标
+										w: 1080, //宽度
+										h: 1920
+									    },
+									    fixedOn:"pickgf_frm",
+									    title: "正在直播",
+										appParam:"http://save.jiashizhan.com:8081/video/20171027/130023675_020714/3675_20171027020714231_av.mp4",
+									    defaultBtn: true,
+									    fixed:false,
+									    enableFull: false
+									    }, function(ret, err) {
+									    	//alert('asd')
+									  }
+	        );
 		}
 
 
